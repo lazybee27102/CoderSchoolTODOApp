@@ -26,7 +26,8 @@ The following optional features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+- Use RecyclerView with StaggeredGridLayoutManager and customize the Adapter with RecyclerView.ViewHolder pattern
+- Every note can have style 'strikethrough' to ensure they have been done by User
 
 Here's a walkthrough of implemented user stories:
 
