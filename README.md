@@ -30,8 +30,11 @@ The following **additional** features are implemented:
 - Every note can have style 'strikethrough' to ensure they have been done by User
 
 Here's a walkthrough of implemented user stories:
-* [ ]OrignalLink:http://i.imgur.com/arFtnQ3.gif
-* [ ]Markdown Link:[Imgur](http://i.imgur.com/arFtnQ3.gifv)
+* [ ] OrignalLink:http://i.imgur.com/arFtnQ3.gif
+* [ ] Markdown Link:[Imgur](http://i.imgur.com/arFtnQ3.gifv)
+
+
+
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
