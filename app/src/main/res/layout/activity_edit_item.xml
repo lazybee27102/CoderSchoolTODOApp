@@ -12,7 +12,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Edit Text"
+        android:text="Change Tilte Or Content"
         android:id="@+id/textView"
         android:gravity="center"
         android:textStyle="bold" />
