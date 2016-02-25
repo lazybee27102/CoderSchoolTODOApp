@@ -7,7 +7,7 @@ A TodoApp to Confirm that I am eligible to participate CoderSchool Course
 
 Submitted by: Hoang Phat Nguyen - lazybee27102@gmail.com
 
-Time spent: 10 hours spent in total
+Time spent: 10 hours spent in total 
 
 The following functionality is completed:
 
@@ -32,11 +32,10 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 * [ ]OrignalLink:http://i.imgur.com/arFtnQ3.gif
 * [ ]Markdown Link:[Imgur](http://i.imgur.com/arFtnQ3.gifv)
-
-
-
-
-
+* 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-- This software is quite simple,so I just review something and I can do it.
+## Notes
+* [ ] It's difficult to design an app(I never do it before,it hard to choose a color,layout,background,....)
+* [ ] There is some issues with RecyclerView that GoogleAndroid Team haven't fixed yet
+
