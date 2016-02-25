@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="coderschoolasignment.todoapp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/vintage_background">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#50000000">
+
+            <TextView
+                android:id="@+id/textView_mainTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#things"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="#fff" />
+            <TextView
+                android:id="@+id/textView_mainTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TO DO"
+                android:textColor="#FFAB00"
+                android:gravity="center"
+                android:textSize="50sp"
+                android:layout_weight="1"
+                android:layout_below="@+id/textView_mainTitle"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_notes"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:scrollbars="vertical"
+                android:layout_weight="8.5"
+                android:layout_below="@+id/textView_mainTitle2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"></android.support.v7.widget.RecyclerView>
+
+
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email" />
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
