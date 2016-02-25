@@ -34,7 +34,6 @@ Here's a walkthrough of implemented user stories:
 * [ ]Markdown Link:[Imgur](http://i.imgur.com/arFtnQ3.gifv)
 
 
-* [ ]HTML:<a href="http://imgur.com/arFtnQ3"><img src="http://i.imgur.com/arFtnQ3.gif" title="source: imgur.com" /></a>
 
 
 
