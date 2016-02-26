@@ -19,6 +19,7 @@ import java.util.Random;
 import coderschoolasignment.todoapp.Note;
 import coderschoolasignment.todoapp.R;
 import coderschoolasignment.todoapp.Colors;
+import coderschoolasignment.todoapp.TypefaceChoser;
 
 /**
  * Created by Administrator on 23/02/2016.
@@ -43,7 +44,7 @@ public class RecyclerViewAdapter_NotesList extends RecyclerView.Adapter<Recycler
 
     @Override
     public void onBindViewHolder(RecyclerViewAdapter_NotesList.MyNoteHolder holder, int position) {
-        Typeface font_softElegance = Typeface.createFromAsset(context.getAssets(),"fonts/softElegance.ttf");
+
         Note note = arrNotes.get(position);
         if (note.getTitle().trim().length()==0)
         {
@@ -51,12 +52,12 @@ public class RecyclerViewAdapter_NotesList extends RecyclerView.Adapter<Recycler
         }else
         {
             holder.textView_title.setText(note.getTitle());
-            holder.textView_title.setTypeface(font_softElegance,Typeface.BOLD);
+            holder.textView_title.setTypeface(TypefaceChoser.getTypeface_softElegance(context),Typeface.BOLD);
         }
 
 
         holder.textView_content.setText(note.getContent());
-        holder.textView_content.setTypeface(font_softElegance);
+        holder.textView_content.setTypeface(TypefaceChoser.getTypeface_softElegance(context));
         holder.textView_time.setText(note.getTime());
         holder.cardView.setBackgroundColor(Color.parseColor(note.getColor()));
 

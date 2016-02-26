@@ -35,6 +35,7 @@ public class SqlOpenHelper{
         values.put(SqlHelper.KEY_status,n.getStatus());
         values.put(SqlHelper.KEY_color,n.getColor());
         long result = db.insert(SqlHelper.TABLE_note,null,values);
+        db.close();
         return result;
     }
 
@@ -58,6 +59,8 @@ public class SqlOpenHelper{
                 cursor.moveToNext();
             }
         }
+        db.close();
+        cursor.close();
         return result;
     }
 
@@ -76,6 +79,8 @@ public class SqlOpenHelper{
             note.setColor(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_color)));
             note.setStatus(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_status))));
         }
+        db.close();
+        cursor.close();
         return note;
     }
 
@@ -83,6 +88,7 @@ public class SqlOpenHelper{
     {
         SQLiteDatabase db = helper.getWritableDatabase();
         int result = db.delete(SqlHelper.TABLE_note,SqlHelper.KEY_id+" = ?",new String[]{String.valueOf(id)} );
+        db.close();
         return result;
     }
 
@@ -93,7 +99,9 @@ public class SqlOpenHelper{
         values.put(SqlHelper.KEY_title,note.getTitle());
         values.put(SqlHelper.KEY_content,note.getContent());
         values.put(SqlHelper.KEY_status,note.getStatus());
-        return db.update(SqlHelper.TABLE_note,values,SqlHelper.KEY_id +" =?",new String[]{String.valueOf(note.getId())});
+        int result=  db.update(SqlHelper.TABLE_note,values,SqlHelper.KEY_id +" =?",new String[]{String.valueOf(note.getId())});
+        db.close();
+        return result;
     }
 
 

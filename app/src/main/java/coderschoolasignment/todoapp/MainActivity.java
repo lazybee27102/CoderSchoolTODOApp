@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements EditItemActivity.
     private ArrayList<Note> arrNotes;
     private Note LongClickNoteChose;
     private RecyclerViewAdapter_NotesList.MyNoteHolder myNoteHolder;
+    private ContextDialog contextDialog;
+    private EditItemActivity editItemActivity;
     private static final StrikethroughSpan STRIKE_THROUGH_SPAN = new StrikethroughSpan();
     //Sqlite
     SqlOpenHelper helper = new SqlOpenHelper(this);
@@ -81,8 +83,7 @@ public class MainActivity extends AppCompatActivity implements EditItemActivity.
 
     private void setUpWidgets() {
         //TextView
-        Typeface aircraft = Typeface.createFromAsset(getAssets(),"fonts/aircraft.ttf");
-        textView_mainTitle2.setTypeface(aircraft);
+        textView_mainTitle2.setTypeface(TypefaceChoser.getTypeface_aircraft(this));
 
         //RecycleView
         recyclerView_notes.setHasFixedSize(true);
@@ -104,16 +105,18 @@ public class MainActivity extends AppCompatActivity implements EditItemActivity.
                 myNoteHolder = (RecyclerViewAdapter_NotesList.MyNoteHolder) recyclerView_notes.findViewHolderForLayoutPosition(position);
             }
         }));
+
+
     }
 
     private void ShowContextDialog(Note longClickNoteChose) {
-        ContextDialog contextDialog = ContextDialog.newInstance(longClickNoteChose.getTitle(),longClickNoteChose);
+        contextDialog = ContextDialog.newInstance(longClickNoteChose.getTitle(),longClickNoteChose);
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         contextDialog.show(fragmentManager,"LONG CLICK NOTE");
     }
 
     private void ShowEditItemDialog(Note n) {
-        EditItemActivity editItemActivity = EditItemActivity.newInstance("Edit Note",n);
+        editItemActivity = EditItemActivity.newInstance("Edit Note",n);
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         editItemActivity.show(fragmentManager,"CLICK NOTE");
     }

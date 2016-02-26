@@ -11,5 +11,10 @@ public class TypefaceChoser {
     {
         return Typeface.createFromAsset(context.getAssets(),"fonts/softElegance.ttf");
     }
+    public static Typeface getTypeface_aircraft(Context context)
+    {
+        return Typeface.createFromAsset(context.getAssets(),"fonts/aircraft.ttf");
+    }
+
 
 }

@@ -44,6 +44,7 @@ public class EditItemActivity extends DialogFragment implements Button.OnClickLi
         {
             n.setTitle(title);
             n.setContent(content);
+            n.setStatus(1);
             helper.UpdateNote(n);
 
             listener = (EditItemListener)getActivity();
