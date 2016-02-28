@@ -7,7 +7,7 @@ A TodoApp to Confirm that I am eligible to participate CoderSchool Course
 
 Submitted by: Hoang Phat Nguyen - lazybee27102@gmail.com
 
-Time spent: 30 hours spent in total 
+Time spent: 40 hours spent in total 
 
 The following functionality is completed:
 
