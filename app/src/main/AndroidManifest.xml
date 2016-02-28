@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="coderschoolasignment.todoapp">
+<permission android:name="READ_EXTERNAL_STORAGE"></permission>
+<permission android:name="WRITE_EXTERNAL_STORAGE"></permission>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
 
     <application
         android:allowBackup="true"
@@ -18,8 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddNoteActivity" />
-        <activity android:name=".EditItemActivity"></activity>
+        <activity android:name=".AddNote.AddNoteActivity" />
+        <activity
+            android:name=".AddNote.ChangeColorActivity"
+            android:theme="@style/ChangeColorDialog" />
+        <activity
+            android:name=".AddNote.AddNewLinkActivity"
+            android:theme="@style/ChangeColorDialog" />
+        <activity android:name=".AddNote.DateAndTimePicker"
+            android:theme="@style/ChangeColorDialog"></activity>
     </application>
 
 </manifest>

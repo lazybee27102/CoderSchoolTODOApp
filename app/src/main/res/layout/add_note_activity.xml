@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/add_note_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF59D"
     android:orientation="vertical"
-    tools:context="coderschoolasignment.todoapp.AddNoteActivity">
+    tools:context=".AddNote.AddNoteActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/colorPrimary"
-        tools:targetApi="lollipop"></android.support.v7.widget.Toolbar>
+        tools:targetApi="lollipop">
+
+    </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,30 +24,116 @@
         android:layout_marginRight="10dp"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editText_title"
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:hint="TITLE"
-            android:padding="5dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColorHint="#50000000"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp" />
+            android:stretchColumns="1">
 
-        <EditText
-            android:id="@+id/editText_content"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="CONTENT "
-            android:padding="5dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColorHint="#50000000"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="Title"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/editText_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+
+                    />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp"
+                    android:text="Content"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <EditText
+                    android:id="@+id/editText_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="visible" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_link"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp"
+                    android:text="Link"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ListView
+                    android:id="@+id/listView_links"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:visibility="gone" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow_deadline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp"
+                    android:text="Deadline"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/textview_add_note_deadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="false"
+                    android:padding="5dp"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="gone" />
+            </TableRow>
+        </TableLayout>
+
+        <ImageView
+            android:id="@+id/imageView_add_note_image"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+             />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,7 +146,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#1E88E5"
+                android:background="@color/material_deep_teal_500"
                 android:text="Reset"
                 android:textColor="#fff" />
 
@@ -70,6 +159,7 @@
                 android:text="Save"
                 android:textColor="#fff" />
         </LinearLayout>
+
     </LinearLayout>
 
 

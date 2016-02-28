@@ -1,7 +1,5 @@
 package coderschoolasignment.todoapp;
 
-import android.os.Parcelable;
-
 import java.io.Serializable;
 
 /**
@@ -14,8 +12,33 @@ public class Note implements Serializable{
     String time;
     String color;
     int status;
+    String link;
+    String imageDir;
+    String deadline;
 
+    public String getLink() {
+        return link;
+    }
 
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
+    }
+
+    public String getImageDir() {
+        return imageDir;
+    }
+
+    public void setImageDir(String imageDir) {
+        this.imageDir = imageDir;
+    }
     //STATUS: 1:NOTE-NOT-DONE-YES 2:NOTE-DONE
 
 
@@ -37,15 +60,25 @@ public class Note implements Serializable{
 
     public Note() {
         this.status = 1;
+        this.link="";
+        this.time = "";
+        this.title = "";
+        this.content = "";
+        this.color = "";
+        this.deadline ="";
+        this.imageDir = "";
     }
 
-    public Note(int id,String title, String content, String time,String color) {
+    public Note(int id,String title, String content, String time,String color,String link,String imageDir,String deadline) {
+        this.link = link;
+        this.imageDir = imageDir;
         this.id = id;
         this.time = time;
         this.title = title;
         this.content = content;
         this.color = color;
         this.status = 1;
+        this.deadline = this.deadline;
     }
 
     public String getTitle() {
@@ -77,5 +110,11 @@ public class Note implements Serializable{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "Id: " + this.id + " Title:"+this.title +" Content:" + this.content +" Color:"+this.color + " Time:" + this.time
+                + " Link:"+this.link +" ImageDir:" + this.imageDir +" Deadline:"+this.deadline;
     }
 }

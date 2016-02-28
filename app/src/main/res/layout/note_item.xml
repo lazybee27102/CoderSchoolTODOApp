@@ -17,13 +17,13 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/cardview_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff"
             android:orientation="horizontal"
             android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:id="@+id/cardview_top">
+            android:paddingTop="5dp">
 
             <TextView
                 android:id="@+id/note_item_title"
@@ -32,8 +32,9 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:text="What is Lorem Ipsum?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -53,7 +54,42 @@
                 android:paddingRight="5dp"
                 android:paddingTop="5dp"
                 android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged...."
-                android:textColor="#000" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView_note_item_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/note_item_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+
+                android:text="LINK"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000"
+                android:visibility="gone" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -69,11 +105,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
-                android:text="23/12 5am"
-
+                android:padding="5dp"
+                android:text="TIME"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#000" />
+
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/note_item_deadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                android:text="DEADLINE"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

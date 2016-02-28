@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AddNote.AddNoteActivity">
+    <item android:id="@+id/menu_action_addLink"
+        android:title="Link"
+        android:icon="@mipmap/ic_link_white_24dp"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        ></item>
+
+    <item android:id="@+id/menu_action_addImage"
+        android:title="Image"
+        android:icon="@mipmap/ic_wallpaper_white_24dp"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        ></item>
+
+    <item android:id="@+id/menu_action_changeColor"
+        android:title="Color"
+        android:icon="@mipmap/ic_palette_white_24dp"
+        android:orderInCategory="300"
+        app:showAsAction="always"
+        ></item>
+
+    <item android:id="@+id/menu_action_changeDeadline"
+        android:title="Deadline"
+        android:icon="@mipmap/ic_access_alarms_white_24dp"
+        android:orderInCategory="400"
+        app:showAsAction="always"
+        ></item>
+</menu>

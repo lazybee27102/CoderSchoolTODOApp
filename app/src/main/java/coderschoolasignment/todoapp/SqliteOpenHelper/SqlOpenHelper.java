@@ -1,6 +1,5 @@
 package coderschoolasignment.todoapp.SqliteOpenHelper;
 
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -34,6 +33,10 @@ public class SqlOpenHelper{
         values.put(SqlHelper.KEY_time,n.getTime());
         values.put(SqlHelper.KEY_status,n.getStatus());
         values.put(SqlHelper.KEY_color,n.getColor());
+        values.put(SqlHelper.KEY_link,n.getLink());
+        values.put(SqlHelper.KEY_imageDir,n.getImageDir());
+        values.put(SqlHelper.KEY_deadline,n.getDeadline());
+
         long result = db.insert(SqlHelper.TABLE_note,null,values);
         db.close();
         return result;
@@ -54,6 +57,9 @@ public class SqlOpenHelper{
                 n.setContent(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_content)));
                 n.setTime(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_time)));
                 n.setColor(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_color)));
+                n.setLink(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_link)));
+                n.setImageDir(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_imageDir)));
+                n.setDeadline(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_deadline)));
                 n.setStatus(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_status))));
                 result.add(n);
                 cursor.moveToNext();
@@ -78,6 +84,9 @@ public class SqlOpenHelper{
             note.setTime(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_time)));
             note.setColor(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_color)));
             note.setStatus(Integer.parseInt(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_status))));
+            note.setLink(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_link)));
+            note.setImageDir(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_imageDir)));
+            note.setDeadline(cursor.getString(cursor.getColumnIndex(SqlHelper.KEY_deadline)));
         }
         db.close();
         cursor.close();
@@ -99,7 +108,11 @@ public class SqlOpenHelper{
         values.put(SqlHelper.KEY_title,note.getTitle());
         values.put(SqlHelper.KEY_content,note.getContent());
         values.put(SqlHelper.KEY_status,note.getStatus());
+        values.put(SqlHelper.KEY_link,note.getLink());
+        values.put(SqlHelper.KEY_imageDir,note.getImageDir());
+        values.put(SqlHelper.KEY_deadline,note.getDeadline());
         int result=  db.update(SqlHelper.TABLE_note,values,SqlHelper.KEY_id +" =?",new String[]{String.valueOf(note.getId())});
+
         db.close();
         return result;
     }
@@ -115,11 +128,16 @@ public class SqlOpenHelper{
         private static final String KEY_time = "Time";
         private static final String KEY_color = "Color";
         private static final String KEY_status="Status";
+        private static final String KEY_link="Link";
+        private static final String KEY_imageDir="ImageDir";
+        private static final String KEY_deadline="Deadline";
+
 
         private Context context;
 
         private static final String CREATE_TABLE_NOTE = "CREATE TABLE " + TABLE_note + "(" + KEY_id +" INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + KEY_title + " TEXT,"+KEY_content+" TEXT," +KEY_time +" TEXT,"+KEY_color+" TEXT,"+ KEY_status+" INTEGER);";
+                + KEY_title + " TEXT,"+KEY_content+" TEXT," +KEY_time +" TEXT,"+KEY_color+" TEXT,"+KEY_link+" TEXT,"+KEY_imageDir+" TEXT,"
+                +KEY_deadline+" TEXT," +KEY_status+" INTEGER);";
         private static final String DROP_TABLE_NOTE = "DROP TABLE " + TABLE_note + " IF EXISTS";
 
 

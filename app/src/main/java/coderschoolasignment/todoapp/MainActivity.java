@@ -1,38 +1,25 @@
 package coderschoolasignment.todoapp;
 
 import android.app.Activity;
-import android.app.FragmentManager;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
-import android.renderscript.Allocation;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.Toolbar;
-import android.text.Spannable;
-import android.text.Spanned;
 import android.text.style.StrikethroughSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.ContextMenu;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Random;
 
+import coderschoolasignment.todoapp.AddNote.AddNoteActivity;
 import coderschoolasignment.todoapp.RecycleView_NotesList.ClickListener;
 import coderschoolasignment.todoapp.RecycleView_NotesList.RecyclerViewAdapter_NotesList;
 import coderschoolasignment.todoapp.RecycleView_NotesList.RecyclerView_TouchListener;
@@ -59,7 +46,11 @@ public class MainActivity extends AppCompatActivity implements EditItemActivity.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //save Device Sceen
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        SharedPreference.WritetoSharePreference(this,"DEVICE_SCREEN_WIDTH",displaymetrics.widthPixels +"");
+        SharedPreference.WritetoSharePreference(this,"DEVICE_SCREEN_HEIGHT",displaymetrics.widthPixels +"");
 
         registerWidgets();
         setUpWidgets();
@@ -130,10 +121,10 @@ public class MainActivity extends AppCompatActivity implements EditItemActivity.
         arrNotes = new ArrayList<>();
         arrNotes.clear();
         arrNotes.addAll(helper.getAllNotes());
-        /*Note first = new Note("What is Lorem Ipsum?","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.","23/12/2016", Colors.getInstance());
-        Note second = new Note("Why do we use it?","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).","24/12/2016",Colors.getInstance());
-        Note third = new Note("Why do we use it?","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).","24/12/2016",Colors.getInstance());
-        Note fourth = new Note("Where can I get some?","There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.","27/02/2016",Colors.getInstance());
+        /*Note first = new Note("What is Lorem Ipsum?","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.","23/12/2016", Colours.getInstance());
+        Note second = new Note("Why do we use it?","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).","24/12/2016",Colours.getInstance());
+        Note third = new Note("Why do we use it?","It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).","24/12/2016",Colours.getInstance());
+        Note fourth = new Note("Where can I get some?","There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.","27/02/2016",Colours.getInstance());
         arrNotes.add(first);
         arrNotes.add(second);
         arrNotes.add(third);
@@ -164,10 +155,9 @@ public class MainActivity extends AppCompatActivity implements EditItemActivity.
         {
             if(resultCode==Activity.RESULT_OK)
             {
-                Note n = (Note) data.getSerializableExtra("note");
-                arrNotes.add(n);
-                adapter_notesList.notifyDataSetChanged();
-                recyclerView_notes.scrollToPosition(arrNotes.size()-1);
+                arrNotes = helper.getAllNotes();
+                adapter_notesList = new RecyclerViewAdapter_NotesList(this,arrNotes);
+                recyclerView_notes.setAdapter(adapter_notesList);
             }
         }
     }
