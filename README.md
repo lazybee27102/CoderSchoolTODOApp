@@ -7,7 +7,7 @@ A TodoApp to Confirm that I am eligible to participate CoderSchool Course
 
 Submitted by: Hoang Phat Nguyen - lazybee27102@gmail.com
 
-Time spent: 10 hours spent in total 
+Time spent: 30 hours spent in total 
 
 The following functionality is completed:
 
@@ -28,11 +28,15 @@ The following **additional** features are implemented:
 
 - Use RecyclerView with StaggeredGridLayoutManager and customize the Adapter with RecyclerView.ViewHolder pattern
 - Every note can have style 'strikethrough' to ensure they have been done by User
-- 
+- Add some functions to each note:
++ Add multiple links (Using ListView with multiple choices,with Add,Delete,Open Browser each link)
++ Image (Using ContentResolver,Intent,Uri to Add,Delete Iamge)
++ Color (ChangeColor,DefaultColor)
++ Deadline (Using DatePicker,TimePicker,Add,Delete)
 
 Here's a walkthrough of implemented user stories:
-* [ ] OrignalLink:http://i.imgur.com/arFtnQ3.gif
-* [ ] Markdown Link:[Imgur](http://i.imgur.com/arFtnQ3.gifv)
+* [X] OrignalLink: http://i.imgur.com/QxZzgbn.gifv
+* [X] Markdown Link:[Imgur](http://i.imgur.com/QxZzgbn.gifv)
 
 
 
@@ -40,6 +44,8 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 # Notes
-* [ ] It's difficult to design an app(I never do it before,it hard to choose a color,layout,background,....)
-* [ ] There is some issues with RecyclerView that GoogleAndroid Team haven't fixed yet
+* [X] It's difficult to design an app(I never do it before,it hard to choose a color,layout,background,....)
+* [X] There is some issues with RecyclerView that GoogleAndroid Team haven't fixed yet
+* [X] Android Marshmalow requires a new User Permission,so I am not sure that all the function run well with device which runs Android 6.0
+* [X] There is some bugs that I don't know How it doesn't work.
 
