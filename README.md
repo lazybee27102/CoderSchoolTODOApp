@@ -1,9 +1,7 @@
 # CoderSchoolTODOApp
 A TodoApp to Confirm that I am eligible to participate CoderSchool Course
 
- TodoApp is an android app that allows building a todo list and basic …
-
-…todo items management functionality including adding new items, editing and deleting an existing item.
+ TodoApp is an android app that allows building a todo list and basic todo items management functionality including adding new items, editing and deleting an existing item.
 
 Submitted by: Hoang Phat Nguyen - lazybee27102@gmail.com
 
@@ -44,8 +42,8 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 # Notes
-* [X] It's difficult to design an app(I never do it before,it hard to choose a color,layout,background,....)
-* [X] There is some issues with RecyclerView that GoogleAndroid Team haven't fixed yet
+* [X] It's difficult to design an app(I never do it before,it's hard to choose a color,layout,background,....)
+* [X] There is some issues with RecyclerView that Google Android Team haven't fixed yet
 * [X] Android Marshmalow requires a new User Permission,so I am not sure that all the function run well with device which runs Android 6.0
-* [X] There is some bugs that I don't know How it doesn't work.
+* [X] There is some bugs that I don't know how it doesn't work.
 
