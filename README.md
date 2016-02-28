@@ -37,7 +37,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 * [X] OrignalLink: http://i.imgur.com/QxZzgbn.gifv
 
-<img src='http://i.imgur.com/QxZzgbn.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/QxZzgbn' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
